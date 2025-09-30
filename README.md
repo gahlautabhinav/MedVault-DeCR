@@ -55,7 +55,7 @@ Deployed addresses will be saved to deployments/
 4. Transparent audit trail combining backend + blockchain.
 
 ## 🚀 Next Steps
-Add doctor dashboard in frontend
-Better key management UX (QR / wallet connect)
-Switch audit_db.json → Postgres or MongoDB
-Deploy backend on cloud (e.g. Render/Heroku/Vercel)
+- Add doctor dashboard in frontend
+- Better key management UX (QR / wallet connect)
+- Switch audit_db.json → Postgres or MongoDB
+- Deploy backend on cloud (e.g. Render/Heroku/Vercel)
