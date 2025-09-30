@@ -1,0 +1,38 @@
+# ---- Global ----
+.DS_Store
+Thumbs.db
+*.log
+
+# ---- Node.js (backend) ----
+backend/node_modules/
+backend/.env
+backend/audit_db.json
+backend/package-lock.json
+
+# Optional: keep if you want lock consistency
+# !backend/package-lock.json
+
+# ---- Flutter (frontend) ----
+frontend/build/
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.packages
+frontend/pubspec.lock
+frontend/coverage/
+frontend/ios/Pods/
+frontend/android/.gradle/
+frontend/android/app/build/
+
+# ---- Blockchain (Hardhat/Foundry/etc) ----
+medchain-blockchain/node_modules/
+medchain-blockchain/.env
+medchain-blockchain/cache/
+medchain-blockchain/artifacts/
+medchain-blockchain/package-lock.json
+
+# ---- IDE/editor ----
+.vscode/
+.idea/
+*.iml
+*.swp
