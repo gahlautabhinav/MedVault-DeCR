@@ -1,5 +1,6 @@
 # MedVault-DeCR
 ### Team: Kodak
+
 A decentralized medical records vault with patient-controlled consent, secure file sharing, and on-chain audit logging.
 
 Built for the 0xGenIgnite Hackathon (NIT Goa) 🚀
