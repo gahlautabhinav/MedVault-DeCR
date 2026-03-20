@@ -1,134 +1,243 @@
-# MedVault-DeCR
+# 🏥 MedVault-DeCR
 
-**MedVault‑DeCR** is a **decentralized Electronic Health Record (EHR) system** built on blockchain (Ethereum‑compatible smart contracts) that gives patients full control over their medical data while enabling secure, auditable sharing with doctors, hospitals, and researchers.  
+### **Decentralized, Encrypted, Patient-Owned Health Records**
 
-This project ties together a **smart‑contract backend**, an **encrypted vault** for storing medical records off‑chain, and a **web frontend** for patients and healthcare providers to interact with the system.
-
----
-
-## 📌 Features
-
-- **Patient‑centric control**: Patients own their medical records and can grant or revoke access to specific providers.  
-- **Decentralized storage**: Large files (PDFs, images, etc.) are stored securely off‑chain, while hashes and access metadata live on‑chain.  
-- **Role‑based access**: Doctors, hospitals, and admins are assigned roles; permissions are enforced via smart contracts.  
-- **Immutable audit trail**: Every read/write and access‑change is logged on the blockchain for transparency and compliance.  
-- **End‑to‑end encryption**: Records are encrypted (e.g., AES‑256) so only authorized parties can decrypt them.  
-- **Optional data monetization**: Patients can allow anonymized, aggregated data to be used for research under predefined conditions.
+> A next-generation Electronic Health Record (EHR) system powered by **Polygon blockchain** and **Storacha (IPFS)**, giving patients full ownership, privacy, and control over their medical data.
 
 ---
 
-## 📦 Tech Stack
+## 🚀 Overview
 
-- **Blockchain layer**: Ethereum‑compatible smart contracts (Solidity) deployed via Ganache or testnet.  
-- **Backend**: Node.js / Express (or similar) to handle user authentication, file uploads, and contract interactions.  
-- **Frontend**: React (or similar) with MetaMask‑style wallet integration for signing transactions and managing permissions.  
-- **Storage**: Encrypted cloud storage or IPFS for storing medical document blobs.  
-- **Security**: Hashing (e.g., SHA‑256), JWT‑based auth, and AES‑256‑GCM‑style encryption.
+**MedVault-DeCR** combines:
 
----
+* 🔗 **Polygon Blockchain** → Low-cost, high-speed, scalable transactions
+* 📱 **Flutter Frontend** → Cross-platform healthcare access
+* 🔐 **End-to-End Encryption** → Privacy-first architecture
+* ☁️ **Storacha (IPFS)** → Decentralized, content-addressed storage
 
-## 🧭 How to Use (High‑Level)
-
-1. **Patient flows**  
-   - Register a patient account (wallet‑based identity).  
-   - Upload medical records (e.g., lab reports, prescriptions) that get encrypted and stored off‑chain.  
-   - Grant access to specific doctors/hospitals by updating smart‑contract permissions.  
-
-2. **Doctor / Hospital flows**  
-   - Scan a patient’s QR‑style vault key or ID.  
-   - Request decryption keys or ciphertexts via the smart contract.  
-   - View only the records for which access is allowed.  
-
-3. **Audit & Compliance**  
-   - Query the blockchain to see full access history (who accessed which record, when, and for what purpose).
+This ensures a **secure, scalable, and patient-centric healthcare ecosystem**.
 
 ---
 
-## 📂 Project Structure (Example)
+## 🧠 Why This Matters
 
-After cloning, a typical layout:
+Traditional EHR systems suffer from:
 
+* ❌ Centralized control
+* ❌ Data silos
+* ❌ Security vulnerabilities
+
+**MedVault-DeCR solves this with:**
+
+* ✅ Patient-owned data
+* ✅ Cryptographic security
+* ✅ Transparent access logs
+* ✅ Interoperable sharing
+
+---
+
+## ✨ Core Features
+
+* 👤 **Patient Sovereignty** → Full control over records
+* 🔐 **AES-256 Encryption** → Secure file protection
+* 🔗 **Smart Contract Access Control** → On-chain permissions
+* 🧾 **Immutable Audit Logs** → Tamper-proof tracking
+* 📱 **Flutter App** → Mobile-first UX
+* ☁️ **Storacha (IPFS)** → Decentralized storage layer
+* 💰 **Data Monetization (Optional)** → Consent-based sharing
+
+---
+
+## 🏗️ Architecture
+
+```text
+             ┌──────────────────────────────┐
+             │     Flutter Frontend App     │
+             │  (Android | iOS | Web-ready) │
+             └──────────────┬───────────────┘
+                            │
+                            ▼
+             ┌──────────────────────────────┐
+             │      Backend (Node.js)       │
+             │ Auth + Encryption + APIs     │
+             └──────────────┬───────────────┘
+                            │
+        ┌───────────────────┼───────────────────┐
+        ▼                                       ▼
+┌──────────────────────┐            ┌────────────────────────┐
+│ Polygon Smart Contracts│          │ Storacha (IPFS Storage)│
+│ - Access Control       │          │ - Encrypted Files       │
+│ - Audit Logs           │          │ - Content-addressed     │
+└──────────────────────┘            └────────────────────────┘
 ```
+
+---
+
+## 📱 Frontend (Flutter)
+
+Built with **Flutter** for a seamless multi-platform experience:
+
+* 📲 Android & iOS support
+* ⚡ Fast, responsive UI
+* 🔐 Secure API communication
+* 🔗 Wallet integration (MetaMask / WalletConnect)
+
+### Responsibilities:
+
+* Upload & encrypt records
+* Manage permissions
+* Access medical history
+* Interact with blockchain
+
+---
+
+## 🧰 Tech Stack
+
+| Layer          | Technology                       |
+| -------------- | -------------------------------- |
+| **Frontend**   | Flutter (Dart)                   |
+| **Blockchain** | Polygon (EVM), Solidity, Hardhat |
+| **Backend**    | Node.js, Express                 |
+| **Storage**    | Storacha (IPFS)                  |
+| **Security**   | AES-256-GCM, SHA-256, JWT        |
+| **Wallet**     | MetaMask / WalletConnect         |
+
+---
+
+## ⚙️ How It Works
+
+### 🧑 Patient Flow
+
+1. Connect wallet via Flutter app
+2. Upload record → encrypted locally
+3. Stored on Storacha → hash stored on Polygon
+4. Grant/revoke access via smart contract
+
+---
+
+### 🧑‍⚕️ Doctor Flow
+
+1. Request access using patient ID / QR
+2. Smart contract validates permission
+3. Retrieve encrypted data from Storacha
+4. Decrypt and view securely
+
+---
+
+### 📊 Audit Flow
+
+* Every access is logged on **Polygon blockchain**
+* Fully transparent and immutable
+
+---
+
+## 📂 Project Structure
+
+```bash
 MedVault-DeCR/
 ├── contracts/          # Solidity smart contracts
-├── backend/            # Node.js / Express server
-│   ├── routes/
-│   ├── controllers/
-│   └── middleware/
-├── frontend/           # React web app
-│   ├── public/
-│   └── src/
-├── scripts/            # Deployment scripts (Hardhat / Truffle)
-├── config/             # Environment variables & constants
-└── README.md           # This file
+├── backend/            # Node.js / Express API
+├── frontend/           # Flutter app
+│   ├── lib/
+│   ├── assets/
+│   └── pubspec.yaml
+├── scripts/            # Deployment scripts
+├── config/
+└── README.md
 ```
 
 ---
 
-## 🏁 Installation & Setup (To‑Do)
+## 🏁 Installation & Setup
 
-Replace with your actual setup steps, but this can be a template:
+### 1️⃣ Clone Repository
 
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/gahlautabhinav/MedVault-DeCR.git
-   cd MedVault-DeCR
-   ```
-
-2. Install dependencies  
-   - Backend:
-     ```bash
-     cd backend
-     npm install
-     ```
-   - Frontend:
-     ```bash
-     cd frontend
-     npm install
-     ```
-
-3. Set environment variables  
-   - Copy `.env.example` to `.env` in both `backend` and (if needed) `frontend`.  
-   - Fill in:  
-     - `PRIVATE_KEY`, `INFURA_KEY`, or RPC URL for blockchain.  
-     - Database / storage credentials.  
-     - JWT secret and encryption keys.
-
-4. Deploy contracts  
-   ```bash
-   cd scripts
-   # Run your deployment script (Hardhat/Truffle etc.)
-   npx hardhat deploy
-   ```
-
-5. Start services  
-   - Backend: `npm run start` (or `nodemon`)  
-   - Frontend: `npm start`  
-
-6. Open the app in the browser (e.g., `http://localhost:3000`).
+```bash
+git clone https://github.com/gahlautabhinav/MedVault-DeCR.git
+cd MedVault-DeCR
+```
 
 ---
 
-## 🧩 How to Contribute
+### 2️⃣ Backend Setup
 
-Contributions are welcome! You can help with:
-
-- Adding new contract features (e.g., data‑sharing consent tiers).  
-- Improving UI/UX for patients and doctors.  
-- Writing tests (unit and integration) for contracts and backend.  
-- Updating documentation and examples.
-
-To contribute:
-1. Fork the repo.  
-2. Create a feature branch: `git checkout -b feat/your-feature`.  
-3. Commit and push your changes.  
-4. Open a pull request with a clear description.
+```bash
+cd backend
+npm install
+npm run dev
+```
 
 ---
 
-## 📄 License
+### 3️⃣ Flutter Setup
 
-This project is open‑source and released under the **[MIT License](https://opensource.org/licenses/MIT)**.  
-See the `LICENSE` file for details.
+```bash
+cd frontend
+flutter pub get
+flutter run
+```
 
-You can paste this as `MedVault-DeCR/README.md` and then edit the **Installation & Setup**, **Project Structure**, and **Contact** sections to match exactly what you have in your repo.
+---
+
+### 4️⃣ Environment Variables
+
+```env
+PRIVATE_KEY=
+RPC_URL= (Polygon RPC URL)
+JWT_SECRET=
+ENCRYPTION_KEY=
+STORACHA_API_KEY=
+```
+
+---
+
+### 5️⃣ Deploy Contracts (Polygon)
+
+```bash
+cd scripts
+npx hardhat deploy --network polygon
+```
+
+---
+
+## 🔐 Security Architecture
+
+* 🔑 Client-side encryption before upload
+* 🔒 No plaintext data stored
+* 🧾 Hash verification via blockchain
+* 🔍 Role-based smart contract enforcement
+
+---
+
+## 📈 Future Roadmap
+
+* [ ] 🔐 Zero-Knowledge Proofs (ZKP)
+* [ ] 🧠 AI-powered diagnostics (privacy-preserving)
+* [ ] 🪪 Decentralized Identity (DID)
+* [ ] 📱 Advanced Flutter dashboards
+* [ ] 🌐 Multi-chain support
+
+---
+
+## 🤝 Contributing
+
+```bash
+git checkout -b feat/your-feature
+```
+
+* Follow clean architecture
+* Write testable code
+* Open detailed PR
+
+---
+
+## 📜 License
+
+MIT License
+[https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
+
+---
+
+## 🌍 Vision
+
+> "Healthcare data should be owned by patients, secured by cryptography, and shared only with consent."
